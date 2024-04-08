@@ -118,15 +118,15 @@ $w.onReady(function () {
         $item("#descritivoBlog").html = `<div id="comp-ltq6m8133__50780342-7e04-4e57-acec-20c2df2dba98" class="wWvZUh" style="--height: 120px; font-size: 14px; color: #404C60;">
             <div id="text-content-comp-ltq6m8133__50780342-7e04-4e57-acec-20c2df2dba98" data-scope="comp-ltqhfl1t__50780342-7e04-4e57-acec-20c2df2dba98" data-repeater-items-indexes="0" class="c9GqVL QxJLC3 comp-ltq6m8133 wixui-rich-text" data-testid="richTextElement">
             ${conteudo}</div></div>`;
-        $item("#linkBlog").link = "/blog/posts/" + itemData.urlAmigavel;
+        $item("#linkBlog").link = "/blog/post/" + itemData.urlAmigavel;
     });
 
     function filterResults(searchText) {
         $w("#dataset1").setFilter(
             wixData.filter()
-            .contains("titulo", searchText)
-            .or(wixData.filter().contains("conteudo", searchText))
-            .or(wixData.filter().contains("categoria", searchText))
+                .contains("titulo", searchText)
+                .or(wixData.filter().contains("conteudo", searchText))
+                .or(wixData.filter().contains("categoria", searchText))
         );
         $w("#dataset1").refresh();
     }
@@ -134,7 +134,7 @@ $w.onReady(function () {
     function filterCategory(category) {
         $w("#dataset1").setFilter(
             wixData.filter()
-            .contains("categoria", category)
+                .contains("categoria", category)
         );
         $w("#dataset1").refresh();
     }
